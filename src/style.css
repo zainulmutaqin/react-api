@@ -42,7 +42,7 @@ body {
     background: white;
   }
   .bgCircle {
-    border-radius: 50%;
+    border-radius: 25%;
     width: 230px;
     height: 230px;
     background-color: #24CED0;
@@ -58,7 +58,7 @@ body {
   }
   
   .circle {
-    border-radius: 50%;
+    border-radius: 25%;
   }
   .ctr {
     text-align: center;
