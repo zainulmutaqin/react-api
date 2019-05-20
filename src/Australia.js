@@ -11,7 +11,7 @@ class Australia extends Component {
   }
 
   componentDidMount() {
-      fetch("https://randomuser.me/api/?results=10&nat=id")
+      fetch("https://randomuser.me/api/?results=8&nat=AU")
         .then(res => res.json())
         .then(parsedJSON => parsedJSON.results.map(data => (
           {
@@ -20,7 +20,10 @@ class Australia extends Component {
             lastName: `${data.name.last}`,
             location: `${data.location.state}, ${data.nat}`,
             thumbnail: `${data.picture.large}`,
-
+            email: `${data.email}`,
+            username:`${data.login.username}`,
+            password: `${data.login.password}`,
+            
           }
         )))
         .then(items => this.setState({
@@ -37,14 +40,16 @@ class Australia extends Component {
             <h2>Random User</h2>
             {
               items.length > 0 ? items.map(item => {
-              const {id, firstName, lastName, location, thumbnail} = item;
+              const {id, firstName, lastName, thumbnail, email, username, password} = item;
                return (
 
                <div key={id} className="bgCircle">
                <center><img src={thumbnail} alt={firstName} className="circle"/> </center><br />
                <div className="ctr">
                   {firstName} {lastName}<br />
-                  {location}
+                  {email}<br />
+                  {username}<br />
+                  {password}<br />
                 </div>
 
               </div>
