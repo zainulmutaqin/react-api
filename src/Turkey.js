@@ -11,7 +11,7 @@ class Turkey extends Component {
   }
 
   componentDidMount() {
-      fetch("https://randomuser.me/api/?results=10&nat=tr")
+      fetch("https://randomuser.me/api/?results=8&nat=TR")
         .then(res => res.json())
         .then(parsedJSON => parsedJSON.results.map(data => (
           {
